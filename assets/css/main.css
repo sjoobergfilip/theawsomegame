@@ -1,0 +1,68 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+/*Fonts end*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 4rem;
+    font-family: 'Bangers', cursive;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.game {
+    max-width: 300px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 3rem;
+
+}
+.game span{
+    font-style: normal;
+    padding: 0.6rem 0;
+    display: inline-block
+}
+.game p{
+    font-style: italic;
+}
+
+.game img{
+    border-radius: 10px;
+}
+
+.button{
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    margin-top: 2rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: 0.6s;
+}
+
+.button:hover{
+    color: black;
+    background-color: white;
+}
+
