@@ -56,4 +56,50 @@ const renderMemoryGrid = () => {
 	});
 };
 
+let counter = 0;
+let selectedBricks = [];
+
+const flipBrick = brick => {
+	brick.classList.add('selected');
+	selectedBricks.push(brick.dataset.id);
+};
+
+const checkMatch = () => {
+	if (selectedBricks[0] === selectedBricks[1]) {
+		console.log('match', selectedBricks[0]);
+		document.querySelectorAll('.selected').forEach(brick => {
+			brick.classList.remove('selected');
+			brick.classList.add('match');
+		});
+		return selectedBricks[0];
+	} else {
+		console.log('no match');
+		document
+			.querySelectorAll('.selected')
+			.forEach(brick => brick.classList.remove('selected'));
+		return 0;
+	}
+};
+
+const isClickable = () => {
+	return true;
+};
+
+document.querySelector('.memory-grid').addEventListener('click', e => {
+	if (e.target.tagName === 'SECTION') {
+		return;
+	}
+
+	if (counter < 2 && isClickable()) {
+		flipBrick(e.target.parentElement);
+		counter++;
+	}
+
+	if (counter === 2) {
+		checkMatch();
+		counter = 0;
+		selectedBricks = [];
+	}
+});
+
 renderMemoryGrid();
