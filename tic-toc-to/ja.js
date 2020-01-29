@@ -27,11 +27,15 @@ playerNames.addEventListener('submit', (e) => {
     firstPlayer = playerNames.first.value;
     secondPlayer = playerNames.second.value;
     document.querySelector('.board').style.display= 'grid';
+    playerNames.style.display= 'none';
+    playerNames.reset();
 })
 
 
 restartButton.addEventListener('click', function () {
     winningMessageElement.style.display = 'none';
+    document.querySelector('.board').style.display= 'none';
+    playerNames.style.display= 'flex';
     startGame()
 })
 
