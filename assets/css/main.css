@@ -3,66 +3,93 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
 /*Fonts end*/
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-body{
-    background-color: black;
-    color: white;
+body {
+	background-color: black;
+	color: white;
 }
 
-h1{
-    text-align: center;
-    margin-top: 5rem;
-    font-size: 4rem;
-    font-family: 'Bangers', cursive;
+h1 {
+	text-align: center;
+	margin-top: 5rem;
+	font-size: 4rem;
+	font-family: 'Bangers', cursive;
 }
 
-.container{
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
 }
 .game {
-    max-width: 300px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-right: 3rem;
-
+	max-width: 300px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	margin-right: 3rem;
 }
-.game span{
-    font-style: normal;
-    padding: 0.6rem 0;
-    display: inline-block
+.game span {
+	font-style: normal;
+	padding: 0.6rem 0;
+	display: inline-block;
 }
-.game p{
-    font-style: italic;
-}
-
-.game img{
-    border-radius: 10px;
+.game p {
+	font-style: italic;
 }
 
-.button{
-    padding: 1rem 2rem;
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    margin-top: 2rem;
-    border: 1px solid white;
-    border-radius: 10px;
-    transition: 0.6s;
+.game img {
+	border-radius: 10px;
 }
 
-.button:hover{
-    color: black;
-    background-color: white;
+.button {
+	padding: 1rem 2rem;
+	text-decoration: none;
+	color: white;
+	display: inline-block;
+	margin-top: 2rem;
+	border: 1px solid white;
+	border-radius: 10px;
+	transition: 0.6s;
 }
 
+.button:hover {
+	color: black;
+	background-color: white;
+}
+
+.memory-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.brick {
+	position: relative;
+}
+
+.brick,
+.back,
+.front {
+	height: 120px;
+	width: 120px;
+}
+
+.back,
+.front {
+	background-color: #f2f2f2;
+	background-image: url('/assets/img/memory/front.png');
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+
+.back {
+	/* visibility: hidden; */
+}
