@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+/*Fonts end*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	/* margin: auto; */
+	/* max-width: 900px; */
+	background-color: black;
+	color: white;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 5rem;
+	font-size: 4rem;
+	font-family: 'Bangers', cursive;
+}
+p {
+	font-family: monospace;
+}
+
+.container {
+	max-width: 900px;
+	margin: auto;
+	justify-content: center;
+	display: block;
+	height: 80vh;
+}
+.memory-grid {
+	margin: 40px;
+	display: grid;
+	gap: 2rem 2rem;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.back,
+.front {
+	border-radius: 12%;
+	background-color: #f2f2f2;
+	background-image: url('/assets/img/memory/front.png');
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+.brick {
+	margin: auto;
+}
+
+.back {
+	visibility: visible;
+}
+button {
+	margin-left: 1rem;
+	border: none;
+}
+p:first-child {
+	margin-right: 1rem;
+}
+.memory-results,
+button {
+	font-family: monospace;
+	font-size: larger;
+	color: aqua;
+	background-color: black;
+}
+.memory-results {
+	justify-content: center;
+	margin: auto;
+	padding-bottom: 2rem;
+	padding-top: 3rem;
+	display: flex;
+}
+
+.hidden .back {
+	visibility: visible;
+}
+.brick {
+	position: relative;
+	transition: all 0.4s linear;
+	transform-style: preserve-3d;
+	margin: 5px;
+}
+
+.brick,
+.back,
+.front {
+	height: 150px;
+	width: 150px;
+}
+
+.back,
+.front {
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.front {
+	z-index: 2;
+	background: #fab942 url('../img/question.gif') no-repeat center center / contain;
+}
+
+.back {
+	transform: rotateY(180deg);
+	background-color: #6589f9;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.selected {
+	transform: rotateY(180deg);
+}
+
+.match .front {
+	background: black !important;
+}
+.back {
+	color: chartreuse;
+}
