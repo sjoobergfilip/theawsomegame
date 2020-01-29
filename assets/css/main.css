@@ -91,7 +91,7 @@ h1 {
 }
 
 .back {
-	/* visibility: hidden; */
+	visibility: hidden;
 }
 
 .selected {

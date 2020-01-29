@@ -85,6 +85,11 @@ const isClickable = () => {
 	return true;
 };
 
+const resetGuesses = () => {
+	counter = 0;
+	selectedBricks = [];
+};
+
 document.querySelector('.memory-grid').addEventListener('click', e => {
 	if (e.target.tagName === 'SECTION') {
 		return;
@@ -96,9 +101,8 @@ document.querySelector('.memory-grid').addEventListener('click', e => {
 	}
 
 	if (counter === 2) {
-		checkMatch();
-		counter = 0;
-		selectedBricks = [];
+		setTimeout(checkMatch, 1200);
+		setTimeout(resetGuesses, 1200);
 	}
 });
 
