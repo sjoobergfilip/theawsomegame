@@ -5,14 +5,14 @@
 
 const getBricks = () => {
 	return [
-		{ id: 1, img: '1.png' },
-		{ id: 2, img: '2.png' },
-		{ id: 3, img: '3.png' },
-		{ id: 4, img: '4.png' },
-		{ id: 5, img: '5.png' },
-		{ id: 6, img: '6.png' },
-		{ id: 7, img: '7.png' },
-		{ id: 8, img: '8.png' }
+		{ id: 1 },
+		{ id: 2 },
+		{ id: 3 },
+		{ id: 4 },
+		{ id: 5 },
+		{ id: 6 },
+		{ id: 7 },
+		{ id: 8 }
 	];
 };
 
@@ -43,12 +43,12 @@ const renderMemoryGrid = () => {
 	bricks = shuffleBricks(bricks);
 
 	// Create brick grid
-	bricks.forEach(brick => {
+	bricks.forEach((brick, idx) => {
 		// Create brick element
 		const html = `
-			<div class="brick" data-id="${brick.id}">
+			<div class="brick" data-id="${brick.id}" data-index="${idx}">
 				<div class="front"></div>
-				<div class="back" style="background-image: url('/assets/img/memory/${brick.img}')"></div>
+				<div class="back" style="background-image: url('/assets/img/memory/${brick.id}.png')"></div>
 			</div>`;
 
 		// Append brick to grid
@@ -70,16 +70,17 @@ const checkMatch = () => {
 			brick.classList.remove('selected');
 			brick.classList.add('match');
 		});
-		return selectedBricks[0];
 	} else {
 		document.querySelectorAll('.selected').forEach(brick => {
 			brick.classList.remove('selected');
 		});
-		return 0;
 	}
 };
 
-const isClickable = () => {
+const isClickable = brick => {
+	if (brick.classList.contains('selected') || brick.classList.contains('match')) {
+		return false;
+	}
 	return true;
 };
 
@@ -93,7 +94,7 @@ document.querySelector('.memory-grid').addEventListener('click', e => {
 		return;
 	}
 
-	if (counter < 2 && isClickable()) {
+	if (counter < 2 && isClickable(e.target.parentElement)) {
 		flipBrick(e.target.parentElement);
 		counter++;
 	}
