@@ -19,23 +19,23 @@ const playerNames = document.querySelector('#players-name')
 let circleTurn
 
 let firstPlayer = '';
-let secondPlayer = ''; 
+let secondPlayer = '';
 
 
 playerNames.addEventListener('submit', (e) => {
     e.preventDefault();
     firstPlayer = playerNames.first.value;
     secondPlayer = playerNames.second.value;
-    document.querySelector('.board').style.display= 'grid';
-    playerNames.style.display= 'none';
+    document.querySelector('.board').style.display = 'grid';
+    playerNames.style.display = 'none';
     playerNames.reset();
 })
 
 
 restartButton.addEventListener('click', function () {
     winningMessageElement.style.display = 'none';
-    document.querySelector('.board').style.display= 'none';
-    playerNames.style.display= 'flex';
+    document.querySelector('.board').style.display = 'none';
+    playerNames.style.display = 'flex';
     startGame()
 })
 
@@ -81,6 +81,8 @@ function endGame(draw) {
     // winningMessageElement.classList.add('show')
     winningMessageElement.style.display = "flex";
 }
+
+
 
 function isDraw() {
     return [...cellElements].every(cell => {

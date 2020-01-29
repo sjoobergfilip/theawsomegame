@@ -4,18 +4,41 @@ box-sizing: border-box;
 
 
 :root{
-    --cell-size:100px;
+    --cell-size:110px;
     --mark-size:calc(var(--cell-size)*.9);
 }
 
  
 body{
     margin:0;
+    background-color: #9a9a9a;
 }
 
+h1 {
+    text-align: center;
+    font-family: 'Zhi Mang Xing', cursive;
+    font-size: 7em;
+    padding: 2rem;
+}
+.first-div{
+    text-align: center;
+    padding-top: 2rem;
+}
+.first-div a{
+    background-color:#fff;
+    padding: 0.7rem;
+    color: #000;
+    border-radius: 0.25rem;
+}
+
+.first-div a:hover{
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+}
 .board{
     width: 100vw;
-    height: 90vh; 
+    height: 70vh; 
     display: none;
     justify-content: center;
     align-content: center;
@@ -27,7 +50,7 @@ body{
     width: var(--cell-size);
     height: var(--cell-size);
     display: flex;
-    border: 1px solid black;
+    border: 3px solid black;
     justify-content: center;
     align-items: center;
     position: relative;/*rättar till vårt X*/
@@ -128,7 +151,7 @@ body{
 .board.x .cell:not(.x):not(.circle):hover::after{
     width: calc(var(--mark-size)*.7);
     height: calc(var(--mark-size)*.7);
-    background-color: white;
+    background-color: #9a9a9a;;
 }    
 
 
@@ -180,5 +203,23 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10rem;
+    margin-top: 4rem;
+}
+
+#first-input{
+    margin-bottom: 1.5rem;
+}
+
+#players-button{
+    margin-top: 1rem;
+}
+
+#first-input,
+#second-input{
+    border-radius: 0.25rem;
+}
+
+#first-input:focus,
+#second-input:focus{
+    outline: none;
 }

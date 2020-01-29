@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tic Tac</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,14 +15,19 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <title>Tic Tac</title>
   </head>
   <body>
+    <div class="first-div">
+      <a href="/index.html">Go back to games</a>
+    </div>
+    <h1>Tic tac toe</h1>
     <form action="" id="players-name">
-        <label for="">First player</label>
-        <input type="text" name="first">
-        <label for="">Second player</label>
-        <input type="text" name="second">
-        <button type="submit">Start</button>
+      <label for="">First player</label>
+      <input type="text" name="first" id="first-input" />
+      <label for="">Second player</label>
+      <input type="text" name="second" id="second-input" />
+      <button type="submit" id="players-button">Start</button>
     </form>
     <div class="board " id="borad">
       <div class="cell " data-cell></div>
@@ -32,7 +40,6 @@
       <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>
     </div>
-
     <div class="winning-message" id="winning-message">
       <div class="data-winning-message-text"></div>
       <button id="restartButton">Restart</button>
