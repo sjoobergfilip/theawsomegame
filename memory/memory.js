@@ -66,17 +66,15 @@ const flipBrick = brick => {
 
 const checkMatch = () => {
 	if (selectedBricks[0] === selectedBricks[1]) {
-		console.log('match', selectedBricks[0]);
 		document.querySelectorAll('.selected').forEach(brick => {
 			brick.classList.remove('selected');
 			brick.classList.add('match');
 		});
 		return selectedBricks[0];
 	} else {
-		console.log('no match');
-		document
-			.querySelectorAll('.selected')
-			.forEach(brick => brick.classList.remove('selected'));
+		document.querySelectorAll('.selected').forEach(brick => {
+			brick.classList.remove('selected');
+		});
 		return 0;
 	}
 };
