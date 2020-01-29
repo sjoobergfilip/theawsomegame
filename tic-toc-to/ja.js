@@ -15,12 +15,22 @@ const board = document.querySelector('#board')
 const winningMessageElement = document.querySelector('#winning-message')
 const winningMessageTextElement = document.querySelector('.data-winning-message-text')
 const restartButton = document.getElementById('restartButton')
+const playerNames = document.querySelector('#players-name')
 let circleTurn
 
+let firstPlayer = '';
+let secondPlayer = ''; 
+
+
+playerNames.addEventListener('submit', (e) => {
+    e.preventDefault();
+    firstPlayer = playerNames.first.value;
+    secondPlayer = playerNames.second.value;
+    document.querySelector('.board').style.display= 'grid';
+})
 
 
 restartButton.addEventListener('click', function () {
-    console.log('hello')
     winningMessageElement.style.display = 'none';
     startGame()
 })
@@ -62,7 +72,7 @@ function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = 'Draw!'
     } else {
-        winningMessageTextElement.innerText = `${ circleTurn ?"O'S":"X's"}Wins`
+        winningMessageTextElement.innerText = `${ circleTurn ? secondPlayer: firstPlayer} Wins`
     }
     // winningMessageElement.classList.add('show')
     winningMessageElement.style.display = "flex";
